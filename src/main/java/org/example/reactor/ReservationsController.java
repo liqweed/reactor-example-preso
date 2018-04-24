@@ -2,8 +2,11 @@ package org.example.reactor;
 
 import org.example.reactor.persistence.ReservationsRepository;
 import org.jetbrains.annotations.NotNull;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Hooks;
 
 import java.time.Clock;
 import java.time.temporal.ChronoUnit;
@@ -16,6 +19,7 @@ public class ReservationsController {
     private final Clock clock;
 
     public ReservationsController(ReservationsRepository reservationsRepository, Clock clock) {
+        Hooks.onOperatorDebug();
         this.reservationsRepository = reservationsRepository;
         this.clock = clock;
     }
