@@ -39,9 +39,7 @@ public class RidesServiceTest {
 
     @Test
     public void virtualTime() {
-        Flux<Long> publisher = Flux.interval(Duration.ofSeconds(45)).take(2);
-
-        StepVerifier.withVirtualTime(() -> publisher)
+        StepVerifier.withVirtualTime(() -> Flux.interval(Duration.ofSeconds(45)).take(2))
                 .thenAwait(Duration.ofSeconds(50))
                 .expectNext(0L)
                 .thenAwait(Duration.ofSeconds(40))
