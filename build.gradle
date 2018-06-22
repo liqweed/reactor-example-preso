@@ -1,7 +1,7 @@
 buildscript {
 	ext {
 		kotlinVersion = '1.2.40'
-		springBootVersion = '2.0.1.RELEASE'
+		springBootVersion = '2.0.3.RELEASE'
 	}
 	repositories {
 		mavenCentral()
@@ -59,6 +59,6 @@ dependencies {
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile('de.flapdoodle.embed:de.flapdoodle.embed.mongo')
     testCompile('io.projectreactor:reactor-test')
-    testCompile('org.assertj:assertj-core:3.9.1')
+    testCompile('org.assertj:assertj-core:3.10.0')
     testCompile('org.awaitility:awaitility:3.1.0')
 }
